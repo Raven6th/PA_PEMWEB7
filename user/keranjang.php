@@ -5,7 +5,7 @@ if (!isset($_SESSION["akses"])){
     $_SESSION["akses"] = "none";
 }
 if ($_SESSION["akses"] !== "user") {
-    echo "<script>alert('Anda perlu login untuk melihat keranjang belanja')</script>";
+    echo "<script>alert('Anda perlu login sebagai user untuk melihat keranjang belanja')</script>";
     header("Location: ../index.php");
 }
 ?>
@@ -67,6 +67,7 @@ if ($_SESSION["akses"] !== "user") {
             margin-top: 80px;
             text-align: center;
             display: block;
+        }
 
         .navbar a:hover {
             color: #FF702a;
@@ -173,6 +174,7 @@ if ($_SESSION["akses"] !== "user") {
                 width: 100%;
                 margin-top: 10px;
             }
+        }
 
         a.button:hover {
             background-color: #555;
@@ -244,7 +246,6 @@ if ($_SESSION["akses"] !== "user") {
                             <td>$<?php echo number_format($total);?></td>
                             <!-- Hapus produk dari keranjang -->
                             <td><a href="hapker.php?id=<?php echo $id_produk ?>"><button class="button">Hapus</button></a></td> 
-                            <td><a href="hapker.php?id=<?php echo $id_produk ?>"><button>Hapus</button></a></td> 
                             
                         </tr>
                         <?php $nomor++; ?>
