@@ -17,7 +17,7 @@ if (isset($_POST["login"])) {
     if (password_verify($pass, $row['password']) && ($row['role'] == 'admin')) {
       
       $_SESSION["akses"] = "admin";
-      header("location: tampilan.php");
+      header("location: admin/tampilan.php");
       exit;
       
     } else if (password_verify($pass, $row['password']) && ($row['role'] == 'user')) {
