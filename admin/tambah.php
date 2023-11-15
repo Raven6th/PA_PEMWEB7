@@ -1,5 +1,8 @@
 <?php
 require '../koneksi.php';
+// if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
+//     header('Location: ../index.php');
+// }
 
 if (isset($_POST['tambah'])) {
     $nama_produk = $_POST["nama_produk"];
@@ -186,15 +189,22 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             background-color: #d65d1a;
         }
 
+        .logo{
+            color: #FF702a;
+            font-weight: 600;
+            font-size: 2.4rem;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
     </style>
 </head>
 <body>
 <div class="sidebar">
-    <div class="logo">
-        <img src="chocolate (4) (1).png" alt="Logo">
+    <div>
+        <h2 href="#" class="logo">Chocolate</h2>
     </div>
-    <a href="tampilan.php">Data Checkout</a>
+    <a href="tampilan.php">Data Menu Coklat</a>
     <a href="../index.php?#menu">Lihat Menu</a>
 </div>
 <form action="" method="post" enctype="multipart/form-data">

@@ -170,14 +170,16 @@ if (!isset($_SESSION["akses"])){
                     </div>
                 </div>
             </div>         
-        </div>
+        </di    v>
     </section>
     <div class="shopping-cart">
-            <?php if ($_SESSION["akses"] === "none") {echo '
-            <a href="login.php">';}
-            ?>
-            <?php if ($_SESSION["akses"] === "user" || $_SESSION["akses"] === "admin") {echo '
-            <a href="tambah.php">';}
+            <?php 
+            if ($_SESSION["akses"] === "none") {
+                echo '<a href="login.php">';} 
+            else if ($_SESSION["akses"] === "admin") {
+                echo '<a href="admin/tambah.php">';}
+            else if ($_SESSION["akses"] === "user") {
+                echo '<a href="user/keranjang.php">';}
             ?>
             <i class="fa-solid fa-cart-plus openModal"></i>
         </a>
