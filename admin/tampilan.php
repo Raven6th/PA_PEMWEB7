@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '../koneksi.php';
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
