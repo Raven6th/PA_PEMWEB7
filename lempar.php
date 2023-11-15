@@ -8,6 +8,8 @@
         $id_produk = $_GET['id'];
         if (isset($_SESSION['keranjang'][$id_produk])) {
             $_SESSION['keranjang'][$id_produk]+=1;
+            echo "<script>alert('Barang di tambahkan ke dalam keranjang')</script>";
+            echo "<script>location='index.php#menu'</script>";
         }
         else {
             // ['keranjang'] merupakan array, sehingga setiap 
