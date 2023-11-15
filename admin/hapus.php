@@ -1,6 +1,8 @@
 <?php
 require '../koneksi.php';
-
+if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
+    header('Location: ../index.php');
+}
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
