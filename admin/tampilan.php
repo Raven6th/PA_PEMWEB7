@@ -6,12 +6,6 @@ if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
     exit;
 }
-
-if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
-    header('Location: ../index.php');
-}
-
-require '../koneksi.php';
 $hasil = mysqli_query($koneksi, "SELECT * FROM produk");
 
 $produk = [];
@@ -371,6 +365,8 @@ td a {
             .search-container input {
                 margin-bottom: 10px;
             }
+        }
+        
         .logo{
             color: #FF702a;
             font-weight: 600;
