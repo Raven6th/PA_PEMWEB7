@@ -1,8 +1,14 @@
 <?php
 require '../koneksi.php';
+
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
 }
+
+if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
+    header('Location: ../index.php');
+}
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $koneksi->prepare("SELECT * FROM produk WHERE id_produk = ?");
@@ -75,13 +81,13 @@ if (isset($_POST['ubah'])) {
             font-family: Arial, sans-serif;
             display: flex;
             height: 100vh;
+            margin: 0;
         }
-
 
         .sidebar {
             float: left;
             width: 20%;
-            background-color: #333;
+            background-color: #555;
             border: none;
             padding-top: 10px;
             height: 100vh;
@@ -90,6 +96,7 @@ if (isset($_POST['ubah'])) {
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: width 0.3s;
         }
 
         .logo {
@@ -97,7 +104,6 @@ if (isset($_POST['ubah'])) {
             text-align: center;
             padding-bottom: 20px;
             border: none;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .logo img {
@@ -113,9 +119,9 @@ if (isset($_POST['ubah'])) {
             text-decoration: none;
             border: none;
         }
+
         .sidebar a:last-child {
             border-bottom: none;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar a:hover {
@@ -167,10 +173,14 @@ if (isset($_POST['ubah'])) {
             font-size: 1.2rem;
             cursor: pointer;
             transition: 0.3s;
+            transform : 0.3s;
         }
 
         form button:hover {
-            background-color: red;
+            background-color: #d65d1a;
+            transform: scale(1) translateY(10px);
+            transition: .4s;
+            transform: scale(1.05);
         }
 
         form select, form input[type="file"] {
@@ -183,10 +193,11 @@ if (isset($_POST['ubah'])) {
             appearance: none;
             font-size: 1rem;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         form input[type="file"]::-webkit-file-upload-button {
-            background-color: orangered;
+            background-color: #d65d1a;
             border: none;
             border-radius: 5px;
             color: white;
@@ -199,14 +210,23 @@ if (isset($_POST['ubah'])) {
             background-color: #d65d1a;
         }
 
+        
+        .logo{
+            color: #d65d1a;
+            font-weight: 600;
+            font-size: 2.4rem;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
     </style>
 </head>
-<div class="sidebar">
-        <div class="logo">
-            <img src="chocolate (4) (1).png" alt="Logo">
-        </div>
-        <a href="tampilan.php">Data Checkout</a>
-        <a href="index.html?#menu">Lihat Menu</a>
+<div class="sidebar">    
+    <div>
+        <h2 href="#" class="logo">Chocolate</h2>
+    </div>
+        <a href="tampilan.php">Data Menu Coklat</a>
+        <a href="../index.php">Lihat Menu</a>
     </div>
 
 <form action="" method="post" enctype="multipart/form-data">
@@ -224,6 +244,14 @@ if (isset($_POST['ubah'])) {
 
     <button type="submit" name="ubah">Ubah</button>
 </form>
-    
+<script>
+        // Tambahkan script untuk menangani perubahan pada input file
+        const fileInput = document.querySelector('input[type="file"]');
+        fileInput.addEventListener('change', function () {
+            const fileName = this.files[0].name;
+            const label = this.nextElementSibling;
+            label.innerHTML = fileName;
+        });
+</script>
 </body>
 </html>

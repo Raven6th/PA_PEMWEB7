@@ -1,5 +1,10 @@
 <?php
 require '../koneksi.php';
+
+if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
+    header('Location: ../tampilan.php');
+}
+
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
 }
