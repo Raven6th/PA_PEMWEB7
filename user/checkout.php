@@ -5,17 +5,16 @@ if (!isset($_SESSION["akses"])){
     $_SESSION["akses"] = "none";
 }
 if ($_SESSION["akses"] !== "user") {
-    echo "<script>alert('Anda perlu login untuk melihat keranjang belanja')</script>";
-    header("Location: ../index.php");
+    echo '<script>alert("Anda perlu login untuk melihat keranjang belanja")window.location.href="../index.php";</script>';
 }
-if (isset($_POST['bayar'])) {
-    echo '<script>alert("Pembayaran berhasil, anda akan di arahkan ke menu utama")</script>';
-    unset($_SESSION['keranjang']);
-    header("Location: ../index.php");
-    exit;
-}if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
-    echo '<script>alert("Keranjang kosong, mohon belanja terlebih dahulu sebelum checkout")</script>';
-    header('Location: ../index.php');
+// if (isset($_POST['bayar'])) {
+//     echo '<script>alert("Pembayaran berhasil, anda akan di arahkan ke menu utama")</script>';
+//     unset($_SESSION['keranjang']);
+//     header("Location: ../index.php");
+//     exit;
+// }
+if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
+    echo '<script>alert("Keranjang kosong, mohon belanja terlebih dahulu sebelum checkout"); window.location.href="../index.php";</script>';
     exit;
 }
 ?>
@@ -127,7 +126,7 @@ if (isset($_POST['bayar'])) {
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="admin/tambah.php">Tambah</a></li>
             <li><a href="../index.php#home">Home</a></li>
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "admin"){ echo 'style="display: none;"';}?>><a href="login.php">Login</a></li>
-            <li <?php if($_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="logout.php">Logout</a></li>
+            <li <?php if($_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="../logout.php">Logout</a></li>
             <li><a href="../index.php#menu">Menu</a></li>
             <li><a href="../index.php#services">Service</a></li>
             <li><a href="../index.php#contact">Contact</a></li>
@@ -189,25 +188,28 @@ if (isset($_POST['bayar'])) {
                     </table>
 
                 <form method="post">
-                    <!-- <input type="text" readonly value="<?php echo $_SESSION["username"]?>">
+                    <input type="text" readonly value="<?php echo $_SESSION["username"]?>">
                     <select name="id_ongkir" id="">
-                        <option value="">Pilih Ongkos Kirim</option> -->
+                        <option value="">Pilih Ongkos Kirim</option>
                         <?php 
-                            // $fetch = $koneksi->query("SELECT * FROM ongkir");
-                            // while ($opsi = $fetch->fetch_assoc()){ ?>
-                                <!-- <option value="<?php echo $opsi['id_ongkir']; ?>">
+                            $fetch = $koneksi->query("SELECT * FROM ongkir");
+                            while ($opsi = $fetch->fetch_assoc()){ ?>
+                                <option value="<?php echo $opsi['id_ongkir']; ?>">
                                     <?php echo $opsi['nama_kota']; ?> - 
                                     $<?php echo number_format($opsi['tarif']); ?>
-                                </option> -->
+                                </option>
                             <?php 
-                            // } 
+                            } 
                             ?>
-                    <!-- </select> -->
-                    <input type="submit" name="bayar" value="Bayar">
+                    </select>
+                    <input type="submit" name="checkout" value="checkout">
                     
                 </form>
                 <?php 
-                    // if (isset($_POST['checkout'])) {
+                    if (isset($_POST['checkout'])) {
+                        echo '<script>alert("Terima kasih telah melakukan checkout"); window.location.href="../index.php";</script>';
+                        unset($_SESSION['keranjang']);
+                        exit;
                     // $id_user = $_SESSION['id_user'];
                     // $id_ongkir = $_POST['id_ongkir'];
                     // $tgl = date('Y-m-d');
@@ -221,10 +223,10 @@ if (isset($_POST['bayar'])) {
                     //     foreach ($_SESSION['keranjang'] as $id_produk => $jumlah){
                     //         // $koneksi->query("INSERT INTO")   
                     //     }
-                    // }
-                    // else {
-                    //     echo '<script>alert("Mohon pilih ongkos kirim yang benar")</script>';
-                    // } 
+                    }
+                    else {
+                        echo '<script>alert("Mohon pilih ongkos kirim yang benar")</script>';
+                    } 
                     // } 
                     ?>
         </div>
