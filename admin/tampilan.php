@@ -41,28 +41,49 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             box-sizing: border-box;
         }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
             margin: 0;
             min-height: 100vh;
         }
+        
         .ser button {
             background-color: var(--sidebar-color);
             color: white;
             transition: 0.3s;
             border-radius: 5px;
         }
+        
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 0 10px 10px 0;
+            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
 
-        .ser button:hover {
-            background-color: var(--hover-color);
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            padding: 10px;
+            width: 80%;
+            margin: 10px auto;
+            background-color: var(--sidebar-color);
+            color: white;
+            
+        }
+        
+        .logo {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0; 
+            color: #FF702a;
+            font-weight: 600;
+            font-size: 2.4rem;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
 
@@ -97,7 +118,6 @@ while ($row = mysqli_fetch_assoc($hasil)) {
         }
         .sidebar a:last-child {
             border-bottom: none;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar a:hover {
@@ -166,6 +186,23 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             color: white;
             
         }
+
+        table {
+            width: 80%;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center; 
+        }
+
+        tr:hover {
+            background-color: #E5E5E5;
+        }
+      
         .main-content a {
             display: block;
             margin: 0 auto;
@@ -239,11 +276,6 @@ td a {
             color: white;
         }
 
-        .checkout-btn {
-            background-color: #555;
-            color: white;
-        }
-
         .edit-btn {
             background-color: #FFC107;
             color: white;
@@ -258,6 +290,7 @@ td a {
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            margin-left: 120px;
         }
 
         .datetime {
@@ -265,20 +298,7 @@ td a {
             color: white;
             padding: 5px 10px;
             border-radius: 5px;
-        }
-
-        .status-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 5px 10px;
-            text-decoration: none;
-            border-radius: 3px;
-            display: inline-block;
-            margin: 0 5px;
-        }
-
-        .status-btn:hover {
-            opacity: 0.9;
+            margin-right: 120px;
         }
 
         .statt-btn {
@@ -288,13 +308,69 @@ td a {
             text-decoration: none;
             border-radius: 3px;
             display: inline-block;
-            margin: 0 5px;
+            margin: 10px ; 
+            margin-left: 120px;
         }
 
         .statt-btn:hover {
             opacity: 0.9;
         }
 
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+
+            table {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+
+            table thead {
+                display: none;
+            }
+
+            table tr {
+                display: block;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 8px;
+            }
+
+            table td {
+                display: block;
+                text-align: left;
+            }
+
+            table td:last-child {
+                border-bottom: none;
+            }
+
+            .datetime {
+                font-size: 14px;
+                padding: 5px 10px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                display: block;
+            }
+
+            .search-container form {
+                margin-top: 10px;
+            }
+
+            .search-container input {
+                margin-bottom: 10px;
+            }
         .logo{
             color: #FF702a;
             font-weight: 600;

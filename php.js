@@ -1,9 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleModeButton = document.querySelector("#toggle-mode");
-    const body = document.body;
-    
-    toggleModeButton && toggleModeButton.addEventListener("click", function() {
-        body.classList.toggle("light-mode");
-        body.classList.toggle("dark-mode");
-    });
+const toggleThemeButton = document.querySelector("#toggle-theme");
+const body = document.body;
+
+toggleThemeButton.addEventListener("click", function () {
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        toggleThemeButton.innerText = "Ganti Tema";
+    } else {
+        body.classList.add("dark-mode");
+        toggleThemeButton.innerText = "Ganti Tema";
+    }
 });

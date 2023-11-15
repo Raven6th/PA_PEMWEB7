@@ -1,10 +1,7 @@
 <?php
+
 session_start();
 require '../koneksi.php';
-
-if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
-    header('Location: ../index.php');
-}
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
@@ -140,12 +137,6 @@ if (isset($_POST['ubah'])) {
             padding: 0 50px;
         }
 
-        form h2 {
-            font-size: 1.8rem;
-            color: var(--main-color);
-            margin-bottom: 20px;
-        }
-
         form label {
             display: block;
             margin-top: 15px;
@@ -211,7 +202,6 @@ if (isset($_POST['ubah'])) {
             background-color: #d65d1a;
         }
 
-        
         .logo{
             color: #d65d1a;
             font-weight: 600;
@@ -219,6 +209,17 @@ if (isset($_POST['ubah'])) {
             padding-top: 50px;
             padding-bottom: 50px;
         }
+
+        @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+        }
+
+        .main-content {
+            margin-left: 0;
+        }
+    }
 
     </style>
 </head>
@@ -246,7 +247,6 @@ if (isset($_POST['ubah'])) {
     <button type="submit" name="ubah">Ubah</button>
 </form>
 <script>
-        // Tambahkan script untuk menangani perubahan pada input file
         const fileInput = document.querySelector('input[type="file"]');
         fileInput.addEventListener('change', function () {
             const fileName = this.files[0].name;

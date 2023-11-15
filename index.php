@@ -50,14 +50,14 @@ if (!isset($_SESSION["akses"])){
         </div>
 
         <div class="home-img">
-            <img src="chocolate (4) (1).png" alt="">
+            <img src="foto_produk/contoh3.png" alt="">
         </div>
 
 
     </section>
     <section class="about" id="about">
         <div class="about-img">
-            <img src="choco 2 (2) (1).jpg" alt="">
+            <img src="foto_produk/contoh2.jpg" alt="">
         </div>
         <div class="about-text">
             <span>About Us</span>

@@ -69,10 +69,13 @@ if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
         .navbar a:hover {
             color: #FF702a;
         }
+      
         .home {
             margin-top: 80px;
             text-align: center;
+            display: block;
         }
+      
         .home-text {
             max-width: 800px;
             margin: 0 auto;

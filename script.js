@@ -63,7 +63,6 @@ window.onclick = (event) => {
         modal3.style.display = 'none';
     }
 
-    // Event Listener
     openModalButton.addEventListener('click', openModal);
     closeModalButton.addEventListener('click', closeModal);
 
