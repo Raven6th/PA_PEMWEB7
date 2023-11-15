@@ -1,5 +1,8 @@
 <?php
 require '../koneksi.php';
+if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
+    header('Location: ../index.php');
+}
 
 if (isset($_POST['tambah'])) {
     $nama_produk = $_POST["nama_produk"];
