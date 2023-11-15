@@ -115,12 +115,12 @@ if ($_SESSION["akses"] !== "user") {
         <ul class="navbar">
             <body class="light-mode">
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="admin/tambah.php">Tambah</a></li>
-            <li><a href="../index.php">Home</a></li>
+            <li><a href="../index.php#home">Home</a></li>
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "admin"){ echo 'style="display: none;"';}?>><a href="login.php">Login</a></li>
             <li <?php if($_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="logout.php">Logout</a></li>
-            <li><a href="../index.php">Menu</a></li>
-            <li><a href="../index.php">Service</a></li>
-            <li><a href="../index.php">Contact</a></li>
+            <li><a href="../index.php#menu">Menu</a></li>
+            <li><a href="../index.php#services">Service</a></li>
+            <li><a href="../index.php#contact">Contact</a></li>
         </ul> 
     </header>
 
@@ -166,7 +166,7 @@ if ($_SESSION["akses"] !== "user") {
                             <td><?php echo $jumlah?></td>
                             <td>$<?php echo number_format($total);?></td>
                             <!-- Hapus produk dari keranjang -->
-                            <td><a href="hapker.php?id=<?php echo $id_produk ?>">Hapus</a></td> 
+                            <td><a href="hapker.php?id=<?php echo $id_produk ?>"><button>Hapus</button></a></td> 
                             
                         </tr>
                         <?php $nomor++; ?>
@@ -176,8 +176,8 @@ if ($_SESSION["akses"] !== "user") {
                         </tbody>
                     </table>';
                 } ?>
-                <a href="../index.php">Kembali Belanja</a>
-                <a href="checkout.php">Checkout</a>
+                <a href="../index.php"><button>Kembali Belanja</button></a>
+                <a href="checkout.php"><button>Checkout</button></a>
         </div>
     </section>
 </body>
