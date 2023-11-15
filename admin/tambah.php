@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../koneksi.php';
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
@@ -88,17 +89,6 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             align-items: center;
         }
 
-        .logo {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 20px;
-            border: none;
-        }
-
-        .logo img {
-            max-width: 85%;
-        }
-
         .sidebar a {
             display: block;
             color: white;
@@ -108,9 +98,9 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             text-decoration: none;
             border: none;
         }
+        
         .sidebar a:last-child {
             border-bottom: none;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar a:hover {
@@ -119,19 +109,13 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             width: 60%;
             color: white;
         }
-
+        
         form {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 0 50px;
-        }
-
-        form h2 {
-            font-size: 1.8rem;
-            color: var(--main-color);
-            margin-bottom: 20px;
         }
 
         form label {
@@ -165,7 +149,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
         }
 
         form button:hover {
-            background-color: red;
+            background-color: #d65d1a;
         }
 
         form select, form input[type="file"] {
@@ -202,11 +186,20 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             padding-bottom: 50px;
         }
 
+        @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+        }
+    }
+
     </style>
 </head>
 <body>
+
+
 <div class="sidebar">
-    <div>
+    <div>  
         <h2 href="#" class="logo">Chocolate</h2>
     </div>
     <a href="tampilan.php">Data Menu Coklat</a>

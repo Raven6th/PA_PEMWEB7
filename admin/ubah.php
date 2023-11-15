@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 require '../koneksi.php';
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
@@ -87,7 +89,7 @@ if (isset($_POST['ubah'])) {
         .sidebar {
             float: left;
             width: 20%;
-            background-color: #555;
+            background-color: #333;
             border: none;
             padding-top: 10px;
             height: 100vh;
@@ -98,18 +100,7 @@ if (isset($_POST['ubah'])) {
             align-items: center;
             transition: width 0.3s;
         }
-
-        .logo {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 20px;
-            border: none;
-        }
-
-        .logo img {
-            max-width: 80%;
-        }
-
+        
         .sidebar a {
             display: block;
             color: white;
@@ -137,12 +128,6 @@ if (isset($_POST['ubah'])) {
             flex-direction: column;
             justify-content: center;
             padding: 0 50px;
-        }
-
-        form h2 {
-            font-size: 1.8rem;
-            color: var(--main-color);
-            margin-bottom: 20px;
         }
 
         form label {
@@ -210,7 +195,6 @@ if (isset($_POST['ubah'])) {
             background-color: #d65d1a;
         }
 
-        
         .logo{
             color: #d65d1a;
             font-weight: 600;
@@ -218,6 +202,17 @@ if (isset($_POST['ubah'])) {
             padding-top: 50px;
             padding-bottom: 50px;
         }
+
+        @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+        }
+
+        .main-content {
+            margin-left: 0;
+        }
+    }
 
     </style>
 </head>
@@ -245,7 +240,6 @@ if (isset($_POST['ubah'])) {
     <button type="submit" name="ubah">Ubah</button>
 </form>
 <script>
-        // Tambahkan script untuk menangani perubahan pada input file
         const fileInput = document.querySelector('input[type="file"]');
         fileInput.addEventListener('change', function () {
             const fileName = this.files[0].name;
