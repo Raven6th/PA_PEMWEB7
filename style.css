@@ -176,6 +176,13 @@ header{
     transition: .4s;
 }
 
+.menu-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
 .box{
     position: relative;
     margin-top: 4rem;

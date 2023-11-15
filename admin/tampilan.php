@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '../koneksi.php';
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
@@ -85,6 +86,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             padding-bottom: 50px;
         }
 
+
         .sidebar {
             width: 20%;
             background-color: var(--sidebar-color);
@@ -93,6 +95,16 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             align-items: center;
             height: 2000px;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0; 
+        }
+
+        .logo img {
+            max-width: 80%;
         }
 
         .sidebar a {
@@ -115,6 +127,66 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             color: white;
         }
 
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* ... (Kode CSS yang sudah ada) ... */
+
+/* Tambahkan media query untuk layar kecil */
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+                overflow-x: auto; /* Membuat scrollbar horizontal jika melebihi lebar layar */
+            }
+
+            table, th, td {
+                font-size: 14px; /* Ukuran font lebih kecil pada layar kecil */
+            }
+
+            table thead {
+                display: none; /* Sembunyikan header pada layar kecil */
+            }
+
+            table tr {
+                display: block;
+                border-bottom: 1px solid #ddd; /* Garis pemisah antar baris */
+                margin-bottom: 8px; /* Ruang antar baris */
+            }
+
+            table td {
+                display: block;
+                text-align: left;
+            }
+
+            table td:last-child {
+                border-bottom: none; /* Hapus garis pemisah pada kolom terakhir */
+            }
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 0 10px 10px 0;
+            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            padding: 10px;
+            width: 80%;
+            margin: 10px auto;
+            background-color: var(--sidebar-color);
+            color: white;
+            
+        }
+
         table {
             width: 80%;
             margin: 10px auto;
@@ -130,6 +202,66 @@ while ($row = mysqli_fetch_assoc($hasil)) {
         tr:hover {
             background-color: #E5E5E5;
         }
+      
+        .main-content a {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            max-width: 100px;
+            margin: 10px auto;
+        }
+
+table {
+    width: 80%; /* Sesuaikan lebar tabel */
+    margin: 10px auto; /* Pusatkan tabel */
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 6px; /* Mengurangi padding */
+    text-align: left;
+}
+
+table thead {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #E5E5E5;
+}
+
+/* ... (Kode CSS yang sudah ada) ... */
+
+
+/* ... (Kode CSS yang sudah ada) ... */
+        th, td {
+    border: 1px solid black;
+    padding: 10px; /* Sesuaikan padding sesuai kebutuhan */
+    text-align: center; /* Teks rata tengah */
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #E5E5E5;
+}
+
+/* Rata tengahkan gambar */
+table img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Rata tengahkan teks pada aksi */
+td a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 
         .delete-btn, .edit-btn , .checkout-btn {
             padding: 5px 10px;
@@ -239,6 +371,12 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             .search-container input {
                 margin-bottom: 10px;
             }
+        .logo{
+            color: #FF702a;
+            font-weight: 600;
+            font-size: 2.4rem;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
     </style>

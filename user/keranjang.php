@@ -58,7 +58,7 @@ if ($_SESSION["akses"] !== "user") {
             font-size: 16px;
             transition: color 0.3s;
         }
-        
+
         .navbar a:hover {
             color: #FF702a;
         }
@@ -67,7 +67,16 @@ if ($_SESSION["akses"] !== "user") {
             margin-top: 80px;
             text-align: center;
             display: block;
+
+        .navbar a:hover {
+            color: #FF702a;
         }
+          
+        .home {
+            margin-top: 80px;
+            text-align: center;
+        }
+          
         .home-text {
             max-width: 800px;
             margin: 0 auto;
@@ -77,7 +86,7 @@ if ($_SESSION["akses"] !== "user") {
             border-radius: 10px;
             margin-top: 20px;
         }
-
+          
         table {
             width: 100%;
             margin-top: 20px;
@@ -86,14 +95,17 @@ if ($_SESSION["akses"] !== "user") {
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
+          
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
+          
         th {
             background-color: #f2f2f2;
         }
+          
         tr:hover {
             background-color: #E5E5E5;
         }
@@ -103,6 +115,7 @@ if ($_SESSION["akses"] !== "user") {
             padding: 10px 20px;
             margin-top: 20px;
             text-decoration: none;
+            background-color: #333;
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s;
@@ -160,7 +173,11 @@ if ($_SESSION["akses"] !== "user") {
                 width: 100%;
                 margin-top: 10px;
             }
+
+        a.button:hover {
+            background-color: #555;
         }
+          
     </style>
 </head>
 <body>
@@ -175,6 +192,11 @@ if ($_SESSION["akses"] !== "user") {
             <li><a href="../index.php#home">Home</a></li>
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "admin"){ echo 'style="display: none;"';}?>><a href="login.php">Login</a></li>
             <li <?php if($_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="logout.php">Logout</a></li>
+        </ul> 
+
+            <li><a href="../index.php#menu">Menu</a></li>
+            <li><a href="../index.php#services">Service</a></li>
+            <li><a href="../index.php#contact">Contact</a></li>
         </ul> 
 
     </header>
@@ -222,6 +244,7 @@ if ($_SESSION["akses"] !== "user") {
                             <td>$<?php echo number_format($total);?></td>
                             <!-- Hapus produk dari keranjang -->
                             <td><a href="hapker.php?id=<?php echo $id_produk ?>"><button class="button">Hapus</button></a></td> 
+                            <td><a href="hapker.php?id=<?php echo $id_produk ?>"><button>Hapus</button></a></td> 
                             
                         </tr>
                         <?php $nomor++; ?>
@@ -245,5 +268,9 @@ if ($_SESSION["akses"] !== "user") {
             });
         });
     </script>
+                <a href="../index.php"><button>Kembali Belanja</button></a>
+                <a href="checkout.php"><button>Checkout</button></a>
+        </div>
+    </section>
 </body>
 </html>

@@ -7,10 +7,6 @@ if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
 }
 
-if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
-    header('Location: ../index.php');
-}
-
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $koneksi->prepare("SELECT * FROM produk WHERE id_produk = ?");
@@ -89,7 +85,7 @@ if (isset($_POST['ubah'])) {
         .sidebar {
             float: left;
             width: 20%;
-            background-color: #333;
+            background-color: #555;
             border: none;
             padding-top: 10px;
             height: 100vh;
@@ -100,7 +96,18 @@ if (isset($_POST['ubah'])) {
             align-items: center;
             transition: width 0.3s;
         }
-        
+
+        .logo {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            border: none;
+        }
+
+        .logo img {
+            max-width: 80%;
+        }
+
         .sidebar a {
             display: block;
             color: white;

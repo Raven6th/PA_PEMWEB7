@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 08:15 AM
+-- Generation Time: Nov 15, 2023 at 12:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -26,15 +26,22 @@ USE `tokocoklat`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `keranjang_user`
+-- Table structure for table `ongkir`
 --
 
-CREATE TABLE `keranjang_user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `id_barang` int(255) NOT NULL,
-  `barang` varchar(255) NOT NULL
+CREATE TABLE `ongkir` (
+  `id_ongkir` int(5) NOT NULL,
+  `nama_kota` varchar(100) NOT NULL,
+  `tarif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ongkir`
+--
+
+INSERT INTO `ongkir` (`id_ongkir`, `nama_kota`, `tarif`) VALUES
+(1, 'Samarinda', 5),
+(2, 'Balikpapan', 7);
 
 -- --------------------------------------------------------
 
@@ -56,8 +63,9 @@ CREATE TABLE `produk` (
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `deskripsi_produk`, `foto_produk`, `harga_produk`) VALUES
 (1, 'produk1', 'lorem', 'contoh1.png', 11),
-(2, 'produk2', 'lorem', 'contoh4.png', 30),
-(3, 'produk3', 'lorem', 'contoh3.png', 21);
+(2, '123', '123', '../foto_produk/2023-11-14-016300500_1637376593-shutterstock_749044213.webp', 23),
+(3, 'produk3', 'lorem', 'contoh3.png', 21),
+(4, '111', '213123', '../foto_produk/2023-11-14-brownies-panggang-foto-resep-utama.jpg', 22);
 
 -- --------------------------------------------------------
 
@@ -88,10 +96,10 @@ INSERT INTO `users` (`id`, `role`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `keranjang_user`
+-- Indexes for table `ongkir`
 --
-ALTER TABLE `keranjang_user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `ongkir`
+  ADD PRIMARY KEY (`id_ongkir`);
 
 --
 -- Indexes for table `produk`
@@ -110,16 +118,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `keranjang_user`
+-- AUTO_INCREMENT for table `ongkir`
 --
-ALTER TABLE `keranjang_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ongkir`
+  MODIFY `id_ongkir` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
