@@ -257,17 +257,11 @@ while ($row = mysqli_fetch_assoc($hasil)) {
                     <td>
                         <a href="hapus.php?id=<?= $prd["id_produk"]; ?>" class="delete-btn">hapus</a>
                         <a href="ubah.php?id=<?= $prd["id_produk"]; ?>" class="edit-btn">ubah</a>
-                        <?php 
-                        if (isset($_SESSION['akses']) && $_SESSION['akses'] === 'admin') {
-                            echo '<a href="admin.php?id=' . $prd["id_produk"] . '" class="status-btn">Change Status</a>';
-                        }
-                        ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="../proses_pembelian.php?id=<?= $prd["id_produk"]; ?>" class="checkout-btn">Check Out</a>
 </div>
 
 </body>
