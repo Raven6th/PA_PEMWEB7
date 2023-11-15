@@ -267,7 +267,6 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="../proses_pembelian.php?id=<?= $prd["id_produk"]; ?>" class="checkout-btn">Check Out</a>
 </div>
 
 </body>
