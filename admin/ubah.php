@@ -5,6 +5,7 @@ require '../koneksi.php';
 
 if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
+    exit;
 }
 
 if (isset($_GET['id'])) {
