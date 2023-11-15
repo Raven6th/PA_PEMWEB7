@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2023 at 11:11 AM
+-- Generation Time: Nov 15, 2023 at 12:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -22,6 +22,26 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `tokocoklat` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `tokocoklat`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ongkir`
+--
+
+CREATE TABLE `ongkir` (
+  `id_ongkir` int(5) NOT NULL,
+  `nama_kota` varchar(100) NOT NULL,
+  `tarif` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ongkir`
+--
+
+INSERT INTO `ongkir` (`id_ongkir`, `nama_kota`, `tarif`) VALUES
+(1, 'Samarinda', 5),
+(2, 'Balikpapan', 7);
 
 -- --------------------------------------------------------
 
@@ -76,6 +96,12 @@ INSERT INTO `users` (`id`, `role`, `username`, `password`) VALUES
 --
 
 --
+-- Indexes for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  ADD PRIMARY KEY (`id_ongkir`);
+
+--
 -- Indexes for table `produk`
 --
 ALTER TABLE `produk`
@@ -90,6 +116,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  MODIFY `id_ongkir` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `produk`
