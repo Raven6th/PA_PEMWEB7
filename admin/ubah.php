@@ -86,7 +86,7 @@ if (isset($_POST['ubah'])) {
         .sidebar {
             float: left;
             width: 20%;
-            background-color: #555;
+            background-color: #333;
             border: none;
             padding-top: 10px;
             height: 100vh;
