@@ -201,15 +201,41 @@ if (isset($_POST['ubah'])) {
         }
 
         @media screen and (max-width: 768px) {
-        .sidebar {
-            width: 100%;
-            height: auto;
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+
+            form {
+                padding: 0 20px;
+            }
+        }
+
+        @media screen and (max-width: 828px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+
+            form {
+                padding: 0 20px;
+            }
+        }
+
+        @media screen and (min-width: 1001px) {
+            .sidebar {
+                width: 20%;
+                height: 100vh;
+            }
+
+            form {
+                padding: 0 50px;
+            }
         }
 
         .main-content {
             margin-left: 0;
         }
-    }
 
     </style>
 </head>
