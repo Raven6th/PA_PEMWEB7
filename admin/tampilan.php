@@ -6,12 +6,25 @@ if (!isset($_SESSION['akses']) || $_SESSION['akses'] !== 'admin') {
     header('Location: ../index.php');
     exit;
 }
-$hasil = mysqli_query($koneksi, "SELECT * FROM produk");
 
-$produk = [];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $search_query = $_POST['search_query'];
+    $search_query = mysqli_real_escape_string($koneksi, $search_query);
+    $query = "SELECT * FROM produk WHERE nama_produk LIKE '%$search_query%'";
+    $result = mysqli_query($koneksi, $query);
+    $produk = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $produk[] = $row;
+    }
+} else {
 
-while ($row = mysqli_fetch_assoc($hasil)) {
-    $produk [] = $row;
+    $hasil = mysqli_query($koneksi, "SELECT * FROM produk");
+
+    $produk = [];
+
+    while ($row = mysqli_fetch_assoc($hasil)) {
+        $produk [] = $row;
+    }
 }
 
 ?>
@@ -390,7 +403,7 @@ td a {
 <div class="main-content">
     
     <div class="search-container">
-        <form action="../search.php" method="post" class="ser">
+        <form action="tampilan.php" method="post" class="ser">
             <input type="text" name="search_query" placeholder="Search...">
             <button type="submit">Search</button>
         </form>
