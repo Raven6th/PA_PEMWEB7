@@ -65,7 +65,7 @@ if (isset($_POST["register"])) {
   <div class="bg">
     <div class="container">
       <form action="" method="POST">
-        <h3>Register</h3>
+        <h3>Chocolate Register</h3>
         <div class="inputBox">
           <label for="">Username</label>
           <input type="text" name="username" placeholder="username" required>
