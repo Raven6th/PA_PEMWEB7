@@ -10,7 +10,7 @@ if (!isset($_SESSION["akses"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chocolate</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,9 +62,9 @@ if (!isset($_SESSION["akses"])){
         <div class="about-text">
             <span>About Us</span>
             <h2>We speak the good <br> Chocolate language</h2>
-            <p>There are many variations passages of Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                Quasi et, similique obcaecati magni vero rem animi at tempora saepe recusandae voluptatem quis accusantium, 
-                <br>laudantium expedita eius eos dolor soluta labore?</p>
+            <p>Welcome to Chocolate, where indulgence meets excellence in every bite. At Chocolate, we take pride in curating a divine collection of artisanal chocolates, handcrafted with passion and precision. 
+                Our journey began with a simple belief – that the finest ingredients combined with skilled craftsmanship create chocolate experiences that linger on the palate and in the heart. 
+                Whether you're seeking a decadent treat for yourself or a delightful gift for a loved one, our diverse range of chocolates promises to captivate your senses.</p>
         <a href="#services" class="btn"> Learn More</a>
         </div>
     </section>
@@ -98,23 +98,23 @@ if (!isset($_SESSION["akses"])){
             <div class="s-box">
                 <img src="s1.png" alt="">
                 <h3>Order</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem culpa numquam aut enim alias? 
-                    Nisi iste perferendis cumque fuga repellat qui earum rem, explicabo atque porro magnam ut, saepe impedit.</p>
+                <p>Experience the ease of ordering your favorite chocolates through our user-friendly online platform. Browse our tantalizing selection, 
+                    add to your cart, and complete your purchase effortlessly.</p>
             </div>
 
             <div class="s-box">
                 <img src="s2.png" alt="">
                 <h3>Shipping</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem culpa numquam aut enim alias? 
-                    Nisi iste perferendis cumque fuga repellat qui earum rem, explicabo atque porro magnam ut, saepe impedit.</p>
+                <p>Once your order is placed, our dedicated team ensures order processing and packaging. Enjoy the anticipation as our swift shipping service 
+                    brings the delectable goodness straight to your doorstep, ensuring freshness and quality with every delivery.</p>
 
             </div>
 
             <div class="s-box">
                 <img src="s3.png" alt="">
-                <h3>Delivered</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem culpa numquam aut enim alias? 
-                    Nisi iste perferendis cumque fuga repellat qui earum rem, explicabo atque porro magnam ut, saepe impedit.</p>
+                <h3>Delivery</h3>
+                <p>Delight in the joy of receiving your handpicked chocolates right on time. Our commitment to timely delivery ensures that your chocolate 
+                    treasures arrive promptly, making every order a sweet and satisfying experience.</p>
 
             </div>
         </div>
