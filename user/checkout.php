@@ -139,9 +139,6 @@ if (isset($_POST['checkout'])) {
             <li><a href="../index.php#home">Home</a></li>
             <li <?php if($_SESSION["akses"] === "user" || $_SESSION["akses"] === "admin"){ echo 'style="display: none;"';}?>><a href="login.php">Login</a></li>
             <li <?php if($_SESSION["akses"] === "none"){ echo 'style="display: none;"';}?>><a href="../logout.php">Logout</a></li>
-            <li><a href="../index.php#menu">Menu</a></li>
-            <li><a href="../index.php#services">Service</a></li>
-            <li><a href="../index.php#contact">Contact</a></li>
         </ul> 
     </header>
 
