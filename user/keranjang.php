@@ -58,7 +58,7 @@ if ($_SESSION["akses"] !== "user") {
             font-size: 16px;
             transition: color 0.3s;
         }
-
+        
         .navbar a:hover {
             color: #FF702a;
         }
@@ -68,16 +68,6 @@ if ($_SESSION["akses"] !== "user") {
             text-align: center;
             display: block;
         }
-
-        .navbar a:hover {
-            color: #FF702a;
-        }
-          
-        .home {
-            margin-top: 80px;
-            text-align: center;
-        }
-          
         .home-text {
             max-width: 800px;
             margin: 0 auto;
@@ -87,7 +77,7 @@ if ($_SESSION["akses"] !== "user") {
             border-radius: 10px;
             margin-top: 20px;
         }
-          
+
         table {
             width: 100%;
             margin-top: 20px;
@@ -96,17 +86,14 @@ if ($_SESSION["akses"] !== "user") {
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-          
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-          
         th {
             background-color: #f2f2f2;
         }
-          
         tr:hover {
             background-color: #E5E5E5;
         }
@@ -116,7 +103,6 @@ if ($_SESSION["akses"] !== "user") {
             padding: 10px 20px;
             margin-top: 20px;
             text-decoration: none;
-            background-color: #333;
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s;
@@ -175,11 +161,6 @@ if ($_SESSION["akses"] !== "user") {
                 margin-top: 10px;
             }
         }
-
-        a.button:hover {
-            background-color: #555;
-        }
-          
     </style>
 </head>
 <body>
