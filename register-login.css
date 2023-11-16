@@ -189,35 +189,3 @@ form a:hover {
     font-size: 18px;
   }
 }
-
-@media only screen and (max-width: 768px) {
-  form {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  form {
-    width: 90%;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  .inputBox label {
-    font-size: 16px;
-  }
-
-  .inputBox input {
-    font-size: 14px;
-  }
-
-  form input[type="submit"] {
-    font-size: 14px;
-  }
-
-  form a {
-    font-size: 12px;
-  }
-}
