@@ -97,18 +97,7 @@ if (isset($_POST['ubah'])) {
             align-items: center;
             transition: width 0.3s;
         }
-
-        .logo {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 20px;
-            border: none;
-        }
-
-        .logo img {
-            max-width: 80%;
-        }
-
+        
         .sidebar a {
             display: block;
             color: white;
