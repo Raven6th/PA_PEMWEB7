@@ -71,7 +71,6 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             height: 100vh;
         }
 
-
         .sidebar {
             float: left;
             width: 20%;
@@ -95,7 +94,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             text-decoration: none;
             border: none;
         }
-        
+
         .sidebar a:last-child {
             border-bottom: none;
         }
@@ -106,7 +105,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             width: 60%;
             color: white;
         }
-        
+
         form {
             flex: 1;
             display: flex;
@@ -122,7 +121,11 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             margin-bottom: 5px;
         }
 
-        form input[type="text"], form input[type="number"] {
+        form input[type="text"],
+        form input[type="number"],
+        form select,
+        form input[type="file"],
+        form textarea {
             width: 100%;
             padding: 10px;
             background-color: #555;
@@ -149,33 +152,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
             background-color: #d65d1a;
         }
 
-        form select, form input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #555;
-            border: 1px solid #777;
-            color: white;
-            border-radius: 5px;
-            appearance: none;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        form input[type="file"]::-webkit-file-upload-button {
-            background-color: orangered;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            padding: 5px 10px;
-            margin-top: 2px;
-            cursor: pointer;
-        }
-
-        form input[type="file"]::-webkit-file-upload-button:hover {
-            background-color: #d65d1a;
-        }
-
-        .logo{
+        .logo {
             color: #FF702a;
             font-weight: 600;
             font-size: 2.4rem;
@@ -184,11 +161,38 @@ while ($row = mysqli_fetch_assoc($hasil)) {
         }
 
         @media screen and (max-width: 768px) {
-        .sidebar {
-            width: 100%;
-            height: auto;
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+
+            form {
+                padding: 0 20px;
+            }
         }
-    }
+
+        @media screen and (max-width: 828px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+
+            form {
+                padding: 0 20px;
+            }
+        }
+
+        @media screen and (min-width: 1001px) {
+            .sidebar {
+                width: 20%;
+                height: 100vh;
+            }
+
+            form {
+                padding: 0 50px;
+            }
+        }
+
 
     </style>
 </head>
