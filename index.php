@@ -19,7 +19,7 @@ if (!isset($_SESSION["akses"])){
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Chocolate</a>
+        <a href="../index.php" class="logo">Chocolate</a>
         <div class="fas fa-bars" id="menu-icon"></div>
 
         <ul class="navbar">
@@ -184,13 +184,13 @@ if (!isset($_SESSION["akses"])){
             <i class="fa-solid fa-cart-plus openModal"></i>
         </a>
     </div>
-    <!-- <div class="popup" id="popup">
+    <div class="popup" id="popup">
         <div class="popup-content">
             <span class="close-btn" id="close-btn">&times;</span>
             <h2>Welcome to Chocolate</h2>
             <p>Thank you for visiting our website! Enjoy the world of premium chocolates.</p>
         </div>
-    </div> -->
+    </div>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
