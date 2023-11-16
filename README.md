@@ -54,7 +54,7 @@ Setelah login, baik admin maupun user akan diarahkan ke dashboard yang menampilk
 Admin dapat menambah data menu coklat dengan menginputkan nama coklat, harga, dan mengunggah foto coklat.
 
 ### 4.2 Mengelola Menu Coklat
-Admin memiliki opsi untuk mengedit dan menghapus data menu coklat yang sudah ada.
+Admin memiliki opsi untuk mengedit dan menghapus data menu coklat yang sudah ada. Dan memiliki fitur search untuk mencari nama produk dari tampilan semua produk. 
 
 ### 4.3 Logout Admin
 Admin dapat logout untuk keluar dari akun admin.
@@ -74,4 +74,4 @@ User dapat melihat semua coklat yang telah dimasukkan ke keranjang dengan meneka
 Dalam keranjang, pengguna dapat melihat semua coklat yang dipilih, memilih opsi pengiriman, dan melanjutkan ke proses checkout. Total harga akan dihitung otomatis.
 
 ## Penjelasan Selesai
-Dengan petunjuk ini, diharapkan pengguna dapat dengan mudah menggunakan aplikasi pemesanan coklat ini. Untuk pertanyaan lebih lanjut, silakan hubungi tim dukungan. Terima kasih telah menggunakan aplikasi ini!
+Dengan petunjuk ini, diharapkan pengguna dapat dengan mudah menggunakan situs pemesanan coklat ini. Terima kasih telah menggunakan aplikasi ini!
