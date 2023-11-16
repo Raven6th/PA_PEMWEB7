@@ -17,6 +17,17 @@ if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
     echo '<script>alert("Keranjang kosong, mohon belanja terlebih dahulu sebelum checkout"); window.location.href="../index.php";</script>';
     exit;
 }
+if (isset($_POST['checkout'])) {
+    if (isset($_POST['id_ongkir']) && $_POST['id_ongkir'] !== "") {
+        // Process checkout
+        echo '<script>alert("Terima kasih telah melakukan checkout"); window.location.href="../index.php";</script>';
+        unset($_SESSION['keranjang']);
+        exit;
+    } else {
+        echo '<script>alert("Mohon pilih ongkos kirim yang benar")</script>';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +35,7 @@ if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Checkout</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -209,10 +220,7 @@ if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
                     
                 </form>
                 <?php 
-                    if (isset($_POST['checkout'])) {
-                        echo '<script>alert("Terima kasih telah melakukan checkout"); window.location.href="../index.php";</script>';
-                        unset($_SESSION['keranjang']);
-                        exit;
+                    
                     // $id_user = $_SESSION['id_user'];
                     // $id_ongkir = $_POST['id_ongkir'];
                     // $tgl = date('Y-m-d');
@@ -226,10 +234,7 @@ if (empty($_SESSION['keranjang']) || !isset($_SESSION['keranjang'])) {
                     //     foreach ($_SESSION['keranjang'] as $id_produk => $jumlah){
                     //         // $koneksi->query("INSERT INTO")   
                     //     }
-                    }
-                    else {
-                        echo '<script>alert("Mohon pilih ongkos kirim yang benar")</script>';
-                    } 
+                    
                     // } 
                     ?>
         </div>
